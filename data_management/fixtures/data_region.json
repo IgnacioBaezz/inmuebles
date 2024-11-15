@@ -1,0 +1,114 @@
+[
+    {
+        "model": "properties.region",
+        "pk": 1,
+        "fields": {
+            "name": "Metropolitana"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 2,
+        "fields": {
+            "name": "Valparaíso"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 3,
+        "fields": {
+            "name": "Biobío"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 4,
+        "fields": {
+            "name": "Antofagasta"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 5,
+        "fields": {
+            "name": "Araucanía"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 6,
+        "fields": {
+            "name": "Maule"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 7,
+        "fields": {
+            "name": "Los Lagos"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 8,
+        "fields": {
+            "name": "O’Higgins"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 9,
+        "fields": {
+            "name": "Coquimbo"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 10,
+        "fields": {
+            "name": "Los Ríos"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 11,
+        "fields": {
+            "name": "Aysén"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 12,
+        "fields": {
+            "name": "Magallanes"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 13,
+        "fields": {
+            "name": "Atacama"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 14,
+        "fields": {
+            "name": "Tarapacá"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 15,
+        "fields": {
+            "name": "Ñuble"
+        }
+    },
+    {
+        "model": "properties.region",
+        "pk": 16,
+        "fields": {
+            "name": "Arica y Parinacota"
+        }
+    }
+]

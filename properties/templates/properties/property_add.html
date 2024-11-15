@@ -1,0 +1,135 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block body %}class="background-image-06"{% endblock %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block main_content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-8 m-5">
+        <div class="card shadow-sm bg-transparency text-white">
+            <div class="card-header text-center">
+                <h1>Agregar Propiedad</h1>
+            </div>
+            <div class="card-body">
+                <form method="post" novalidate data-bs-theme="dark">
+                    {% csrf_token %}
+                    <h2>Datos generales</h2>
+                    <hr>
+                    <div class="mb-3">
+                        {{ prop_form.region.label_tag }}
+                        {{ prop_form.region }}
+                        {% if prop_form.region.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.region.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.commune.label_tag }}
+                        {{ prop_form.commune }}
+                        {% if prop_form.commune.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.commune.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.property_type.label_tag }}
+                        {{ prop_form.property_type }}
+                        {% if prop_form.property_type.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.property_type.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.name.label_tag }}
+                        {{ prop_form.name }}
+                        {% if prop_form.name.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.name.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.description.label_tag }}
+                        {{ prop_form.description }}
+                        {% if prop_form.description.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.description.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.address.label_tag }}
+                        {{ prop_form.address }}
+                        {% if prop_form.address.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.address.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.m2_built.label_tag }}
+                        {{ prop_form.m2_built }}
+                        {% if prop_form.m2_built.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.m2_built.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.m2_totals.label_tag }}
+                        {{ prop_form.m2_totals }}
+                        {% if prop_form.m2_totals.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.m2_totals.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <h2 class="mt-3 fw-bold">Precios</h2>
+                    <hr>
+                    <div class="mb-3">
+                        {{ price_form.monthly_price.label_tag }}
+                        {{ price_form.monthly_price }}
+                        {% if price_form.monthly_price.errors %}
+                            <div class="text-danger">
+                                {{ price_form.monthly_price.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ price_form.sale_price.label_tag }}
+                        {{ price_form.sale_price }}
+                        {% if price_form.sale_price.errors %}
+                            <div class="text-danger">
+                                {{ price_form.sale_price.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ price_form.status.id_for_label}}">
+                            Que Desea hacer con la propiedad?
+                        </label>
+                        {{ price_form.status_price}}
+                    </div>
+                    <div class="card-footer">
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-house pe-2"></i>Guardar
+                                Propiedad</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block extra_js %}
+<script>window.comunasPorRegion = {{ comunas_por_region|safe }};</script>
+<script src="{% static 'properties/js/filter.js' %}"></script>
+{% endblock %}

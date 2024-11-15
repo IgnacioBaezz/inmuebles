@@ -1,0 +1,166 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+{% block body %}class="background-image-03"{% endblock %}
+
+{% block main_content %}
+<div class="container bg-transparency my-3 py-3 text-white rounded">
+    {% if user_type == "member" %}
+    <div class="alert alert-success text-center">
+        <h2>¡Bienvenido futuro socio!</h2>
+        <p>Únete a nuestro grupo de socios y empieza a gestionar tus propiedades ahora.</p>
+    </div>
+
+    <div class="text-center my-3">
+        <a href="{% url 'register' %}?user_type=member" class="btn btn-primary btn-lg">Únete como socio</a>
+    </div>
+    <!-- Beneficios para Socios -->
+    <div class="accordion accordion-flush" id="accordionFlushMember" data-bs-theme="dark">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <strong>Gestión fácil de tus propiedades</strong>
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushMember">
+                <div class="accordion-body">
+                    <p>Como socio, podrás gestionar todas tus propiedades de manera sencilla a través de nuestra
+                        plataforma online, asegurando que puedas acceder a la información de tus inmuebles en cualquier
+                        momento y desde cualquier lugar.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    <strong>Acceso a ofertas exclusivas</strong>
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushMember">
+                <div class="accordion-body">
+                    <p>Disfruta de promociones especiales y precios exclusivos solo para socios, permitiéndote acceder a
+                        propiedades con descuentos únicos y beneficios que no están disponibles para el público general.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <strong>Soporte personalizado</strong>
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushMember">
+                <div class="accordion-body">
+                    <p>Como miembro de nuestra inmobiliaria, tendrás acceso a un servicio de atención al cliente
+                        personalizado, con un equipo disponible para ayudarte con cualquier consulta o necesidad que
+                        puedas tener durante tu experiencia de compra o alquiler.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% elif user_type == "customer" %}
+    <div class="alert alert-info text-center">
+        <h2>¡Hazte cliente y obtén beneficios exclusivos!</h2>
+        <p>Obtén promociones y beneficios solo para clientes de nuestra inmobiliaria.</p>
+    </div>
+
+    <div class="text-center my-3">
+        <a href="{% url 'register' %}?user_type=customer" class="btn btn-lg btn-primary">Regístrate como cliente</a>
+    </div>
+
+    <div class="accordion accordion-flush" id="accordionFlushCustomer" data-bs-theme="dark">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <strong>Descuentos en propiedades seleccionadas</strong>
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushCustomer">
+                <div class="accordion-body">
+                    <p>Al convertirte en cliente, podrás acceder a descuentos exclusivos en propiedades
+                        seleccionadas, lo que te permitirá encontrar tu hogar ideal a un precio aún más
+                        accesible.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    <strong>Acceso a promociones especiales</strong>
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushCustomer">
+                <div class="accordion-body">
+                    <p>Recibe ofertas limitadas y promociones especiales solo para nuestros clientes, asegurando
+                        que siempre estés al tanto de las mejores oportunidades en el mercado inmobiliario.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <strong>Soporte personalizado</strong>
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushCustomer">
+                <div class="accordion-body">
+                    <p>Como cliente, tendrás la ventaja de recibir atención prioritaria en todas tus consultas y
+                        trámites relacionados con la compra o alquiler de propiedades, para que siempre recibas
+                        el mejor servicio de forma rápida y eficiente.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="container-fluid">
+        <div class="row justify-content-around">
+            <!-- Card 1: Información -->
+            <div class="card bg-dark text-white border-0 col-12 col-md-6 col-lg-4 m-3 h-100">
+                <div class="card-header border-0">
+                    <h2 class="card-title">¿Deseas información específica?</h2>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Selecciona uno de nuestros planes</p>
+                </div>
+                <div class="card-footer border-0 d-flex justify-content-center">
+                    <a href="{% url 'client-url' %}?user_type=customer" class="btn btn-sm btn-primary btn-lg my-2 mx-2">Información de Cliente</a>
+                    <a href="{% url 'client-url' %}?user_type=member" class="btn btn-sm btn-primary btn-lg my-2 mx-2">Información de Socio</a>
+                </div>
+            </div>
+            
+            <!-- Card 2: Slogan -->
+            <div class="card d-none d-md-block col-md-6 col-lg-4 text-center bg-light text-dark rounded h-100 my-5">
+                <div class="card-body d-flex justify-content-center align-items-center">
+                    <p class="fw-light fs-2"><i>"Conectamos sueños con propiedades."</i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% block content %}
+    <div class="container-fluid bg-dark text-white text-center py-3 my-5">
+        <h2 class="p-2">Acerca de <strong>Báez Inmobiliaria</strong></h2>
+        <div>
+            <p>Inmobiliaria Báez nació hace más de dos décadas con el propósito de ofrecer un enfoque fresco y cercano
+                al mundo de los bienes raíces. Fundada por un equipo de profesionales apasionados por el sector
+                inmobiliario, su visión era clara: transformar la experiencia de compra, venta y alquiler de
+                propiedades, brindando a cada cliente un servicio personalizado y transparente. Desde sus inicios, la
+                empresa se destacó por su compromiso con la calidad, la ética y el bienestar de sus clientes,
+                posicionándose rápidamente como un referente en la región. Hoy, Inmobiliaria Báez continúa creciendo,
+                ofreciendo soluciones innovadoras y adaptadas a las necesidades de un mercado en constante evolución,
+                siempre manteniendo su misión de ser un aliado confiable en el camino hacia el hogar perfecto.</p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+{% endblock %}

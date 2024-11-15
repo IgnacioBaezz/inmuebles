@@ -1,0 +1,58 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+{% block body %}class="background-image-06"{% endblock %}
+
+{% block main_content %}
+<div class="container-fluid p-3">
+    <div class="row justify-content-center">
+
+        <div class="container bg-transparency p-3">
+            <h2 class="text-center text-white">
+                "¡Bienvenido a Báez Inmobiliaria! Aquí tienes las opciones más convenientes para clientes y socios. Elige la tuya y empieza hoy mismo."
+            </h2>
+        </div>
+        <div class="row g-3 justify-content-around my-5">
+            <div class="card border-0 col-12 col-md-5 bg-transparency text-white">
+                <img src="{% static 'core/img/contrato02.jpg' %}" class="card-img-top w-80" alt="contrato">
+                <div class="card-header">
+                    <p class="card-title fs-4 text-center text-white rounded p-2 my-1">
+                        Encuentra tu hogar soñado con nosotros
+                    </p>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Descubre las mejores propiedades adaptadas a tus necesidades y disfruta de una experiencia única
+                        al encontrar tu lugar ideal. ¿Estás listo para dar el siguiente paso hacia la casa de tus
+                        sueños?
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'client-url' %}?user_type=customer" class="btn btn-light mb-2"><i
+                            class="fa-solid fa-plus"></i> Quiero saber más...</a>
+                </div>
+            </div>
+            <div class="card border-0 col-12 col-md-5 bg-transparency text-white">
+                <img src="{% static 'core/img/contrato01.jpg' %}" class="card-img-top w-80" alt="contrato">
+                <div class="card-header">
+                    <p class="card-title fs-4 text-center text-white rounded p-2 my-1">
+                        Gestiona tus propiedades como un experto
+                    </p>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Potencia tu experiencia como socio y aprovecha las herramientas y soporte exclusivo que te
+                        ofrecemos para gestionar tus propiedades con facilidad y éxito. ¡Lleva tu negocio inmobiliario
+                        al siguiente nivel!
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'client-url' %}?user_type=member" class="btn btn-light mb-2"><i
+                            class="fa-solid fa-plus"></i> Quiero saber más...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

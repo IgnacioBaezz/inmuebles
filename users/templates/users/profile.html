@@ -1,0 +1,68 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+{% block body %}class="background-image-04"{% endblock %}
+
+{% block main_content %}
+<div class="container-fluid bg-transparency rounded p-3 my-3">
+    <h1 class="text-center text-white">Bienvenido {{user.username}}</h1>
+</div>
+
+<div id="profile-view" class="row my-3">
+    <div class="container col-10 bg-transparency text-white p-3">
+        <h2>Perfil de
+            {% if user.first_name and user.last_name %}
+            {{ user.first_name }} {{ user.last_name }}
+            {% else %}
+            {{ user.username }}
+            {% endif %}
+        </h2>
+        <ul>
+            {% for key, value in usuario_info.items %}
+            {% if value is not None or not "" %}
+            <li><strong>{{ key|capfirst }}:</strong> {{ value }}</li>
+            {% else %}
+            <li><strong>{{ key|capfirst }}:</strong> </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        <hr>
+        <button id="edit-profile-btn" class="btn btn-light my-2"><i class="fa-solid fa-pen-to-square fa-1x"></i><br>Editar mi perfil</button>
+    </div>
+</div>
+<div id="profile-edit-form" class="row my-3 d-none">
+    <div class="container col-10 bg-transparency text-white p-3 rounded">
+        <h2>Editar Perfil</h2>
+        <form action="" method="post" data-bs-theme="dark">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="{{ form.email.id_for_label }}">Correo electrónico</label>
+                {{ form.email }}
+                {{ form.email.errors}}
+            </div>
+            <div class="mb-3">
+                <label for="{{ form.first_name.id_for_label }}">Nombre</label>
+                {{ form.first_name }}
+                {{ form.first_name.errors}}
+            </div>
+            <div class="mb-3">
+                <label for="{{ form.last_name.id_for_label }}">Apellido</label>
+                {{ form.last_name }}
+                {{ form.last_name.errors}}
+            </div>
+            <div class="mb-3">
+                <label for="{{ form.description.id_for_label }}">Descripción</label>
+                {{ form.description }}
+                {{ form.description.errors}}
+            </div>
+            <button type="submit" class="btn btn-success"><i class="fa-solid fa-check"></i> Guardar cambios</button>
+            <button id="cancel-edit-btn" type="button" class="btn btn-danger"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'users/js/profile_edit.js' %}"></script>
+{% endblock %}

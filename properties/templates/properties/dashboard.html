@@ -1,0 +1,215 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+{% block body %}class="background-image-01"{% endblock %}
+
+{% block main_content %}
+
+<div class="container bg-transparency rounded p-2 my-3">
+    <h1 class="text-center text-white">Bienvenido {{user.username}}</h1>
+</div>
+
+{% if user_group.name == "arrendadores" or user.is_superuser%}
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-3 col-lg-2 d-md-block mb-3 bg-transparency text-white sidebar">
+            <div class="position-sticky">
+                <h4 class="mt-4">
+                    {% if user.first_name and user.last_name %}
+                    {{ user.first_name }} {{ user.last_name }}
+                    {% else %}
+                    {{ user.username }}
+                    {% endif %}
+                </h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="{% url 'owner-properties' %}" class="nav-link text-white me-3 my-2">
+                            Ver mis propiedades
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">
+                            
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">
+                            <i class="bi bi-person"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">
+                            <i class="bi bi-gear"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="col-md-9 ms-sm-auto col-lg-10 px-4">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-3 mb-3 border-bottom bg-transparency text-white rounded">
+                <h1 class="h2">Estadisticas de mis propiedades</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <a href="{% url 'profile' %}" class="nav-link">
+                        <button type="button" class="btn btn-light btn-lg ms-3 pe-3 d-none d-lg-block">
+                            <i class="fa-solid fa-circle-user"></i> Ver mi perfil
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card text-white bg-primary mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Disponibles</h5>
+                            <p class="card-text">{{ properties_data.0 }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card text-white bg-success mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">En venta</h5>
+                            <p class="card-text">{{ properties_data.1 }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card text-white bg-warning mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">En arriendo</h5>
+                            <p class="card-text">{{ properties_data.2 }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card text-white bg-danger mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">En oferta</h5>
+                            <p class="card-text">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="bg-transparency p-2 text-white rounded text-center">Propiedades destacadas</h2>
+            {% if properties %}
+            <div class="table-responsive">
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col" class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for property in properties %}
+                        <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td>{{ property.name }}</td>
+                            <td>{{ property.address }}</td>
+                            <td class="text-center">
+                                <a aria-label="Ver" href="{% url 'property-detail' property.id %}"
+                                    class="btn btn-primary btn-sm mx-2"><i class="fa-regular fa-eye text-white"></i></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <th>6</th>
+                            <td>
+                                <a href="{% url 'owner-properties' %}" class="text-white fs-4">Ver mas...</a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="bg-light p-3">No tienes propiedades actualmente...
+                <a href="{% url 'property-add' %}" class="btn btn-sm btn-dark">Añade una</a>
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="card mb-4 p-4 bg-transparency">
+    <h2 class="text-center text-white mb-3">Encuentra tu Propiedad Ideal</h2>
+    <form method="get" action="{% url 'property-search' %}" data-bs-theme="dark">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="{{form.commune.id_for_label}}" class="text-white">Comuna</label>
+                {{ form.commune }}
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="{{form.property_type.id_for_label}}" class="text-white">Tipo de propiedad</label>
+                {{ form.property_type }}
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="{{form.max_price.id_for_label}}" class="text-white">Precio maximo de venta</label>
+                {{ form.max_price }}
+            </div>
+            <div class="text-center my-2">
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<!-- Sección de Propiedades Destacadas -->
+<h2 class="text-white mt-5">Propiedades Destacadas</h2>
+<div class="row">
+    {% for property in properties %}
+    <div class="col-md-4 mb-4">
+        <div class="card bg-transparency text-white">
+            <img src="{{ property.image.url }}" class="card-img-top" alt="{{ property.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ property.name }}</h5>
+                <p class="card-text">{{ property.description|truncatechars:100 }}</p>
+                <p class="card-text">
+                    <strong>{{ property.price.status_price|title }}:</strong>
+                    {% if property.price.status_price == "sell" %}
+                    ${{ property.price.sale_price }}
+                    {% else %}
+                    ${{ property.price.monthly_price }}
+                    {% endif %}
+                </p>
+                <a href="{% url 'property-detail' property.id %}" class="btn btn-info">Ver Detalles</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-white">No hay propiedades destacadas disponibles en este momento.</p>
+    {% endfor %}
+</div>
+
+<h2 class="text-white mt-5">Guías y Artículos Útiles</h2>
+<!-- <div class="row">
+    {% for guide in guides %}
+    <div class="col-md-4 mb-4">
+        <div class="card bg-transparency text-white">
+            <div class="card-body">
+                <h5 class="card-title">{{ guide.title }}</h5>
+                <p class="card-text">{{ guide.summary|truncatechars:100 }}</p>
+                <a href="{% url 'article-detail' guide.id %}" class="btn btn-outline-info">Leer Más</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-white">No hay artículos disponibles en este momento.</p>
+    {% endfor %}
+</div> -->
+
+<div class="card mt-5 p-4 bg-info text-dark text-center">
+    <h3 class="fw-bold">¿Quieres acceder a beneficios exclusivos?</h3>
+    <p>Únete a nuestra comunidad de socios y obtén acceso a propiedades exclusivas, propuestas personalizadas, y mucho
+        más.</p>
+    <a href="#" class="btn btn-dark">Conviértete en Socio</a>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,242 @@
+[
+    {
+        "model": "properties.property",
+        "pk": 1,
+        "fields": {
+            "name": "Proviyork",
+            "description": "Estandares altos y comodidad y calidad de vida, tenemos justo lo que buscas",
+            "address": "Amapolas 2001",
+            "m2_built": 80,
+            "m2_totals": 100,
+            "active": true,
+            "property_type": 1,
+            "owner": 2,
+            "region": 1,
+            "commune": 1
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 2,
+        "fields": {
+            "name": "Proyecto Paella",
+            "description": "Proyecto de altamar con vista panorámica al océano",
+            "address": "Avenida Arturo Pratt 1879",
+            "m2_built": 500,
+            "m2_totals": 800,
+            "active": true,
+            "property_type": 2,
+            "owner": 2,
+            "region": 1,
+            "commune": 1
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 3,
+        "fields": {
+            "name": "Proyecto fin del mundo",
+            "description": "Lugar único para aprovechar estas tierras sagradas en tus últimos días",
+            "address": "Los canelos parcela 5",
+            "m2_built": 200,
+            "m2_totals": 5000,
+            "active": true,
+            "property_type": 6,
+            "owner": 2,
+            "region": 11,
+            "commune": 28
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 4,
+        "fields": {
+            "name": "Proyecto Bin La Den",
+            "description": "Aprovecha las promociones 2x1 imperdible en Septiembre, Solo 11 días",
+            "address": "Las gemelas 2010",
+            "m2_built": 200,
+            "m2_totals": 5000,
+            "active": true,
+            "property_type": 7,
+            "owner": 2,
+            "region": 1,
+            "commune": 1
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 5,
+        "fields": {
+            "name": "Casa de Campo",
+            "description": "Disfruta de la naturaleza y la tranquilidad en esta hermosa casa de campo.",
+            "address": "Camino Verde 1050",
+            "m2_built": 150,
+            "m2_totals": 3000,
+            "active": true,
+            "property_type": 3,
+            "owner": 2,
+            "region": 6,
+            "commune": 18
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 6,
+        "fields": {
+            "name": "Departamento Urbano",
+            "description": "Moderno departamento en el corazón de la ciudad, ideal para profesionales.",
+            "address": "Calle Principal 456",
+            "m2_built": 70,
+            "m2_totals": 70,
+            "active": true,
+            "property_type": 4,
+            "owner": 2,
+            "region": 1,
+            "commune": 1
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 7,
+        "fields": {
+            "name": "Villa Costera",
+            "description": "Villa con vista al mar, perfecta para vacaciones familiares.",
+            "address": "Playa del Sol 89",
+            "m2_built": 220,
+            "m2_totals": 500,
+            "active": true,
+            "property_type": 5,
+            "owner": 2,
+            "region": 2,
+            "commune": 6
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 8,
+        "fields": {
+            "name": "Terreno en la Montaña",
+            "description": "Ideal para construir tu hogar de ensueño, con vistas impresionantes.",
+            "address": "Cerro Alto 300",
+            "m2_built": 0,
+            "m2_totals": 10000,
+            "active": true,
+            "property_type": 2,
+            "owner": 2,
+            "region": 5,
+            "commune": 16
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 9,
+        "fields": {
+            "name": "Local Comercial",
+            "description": "Espacio ideal para tu negocio, en zona de alta afluencia.",
+            "address": "Av. Comercio 987",
+            "m2_built": 120,
+            "m2_totals": 120,
+            "active": true,
+            "property_type": 1,
+            "owner": 2,
+            "region": 1,
+            "commune": 1
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 10,
+        "fields": {
+            "name": "Casa Histórica",
+            "description": "Casa con encanto histórico, perfecta para eventos o como B&B.",
+            "address": "Calle Antiguo 202",
+            "m2_built": 250,
+            "m2_totals": 600,
+            "active": true,
+            "property_type": 2,
+            "owner": 2,
+            "region": 1,
+            "commune": 1
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 11,
+        "fields": {
+            "name": "Casa Moderna",
+            "description": "Moderna casa de 3 habitaciones con jardín.",
+            "address": "Calle Verde 101",
+            "m2_built": 180,
+            "m2_totals": 350,
+            "active": true,
+            "property_type": 1,
+            "owner": 2,
+            "region": 1,
+            "commune": 1
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 12,
+        "fields": {
+            "name": "Estudio en el Centro",
+            "description": "Estudio luminoso y bien ubicado, ideal para una persona.",
+            "address": "Calle Central 234",
+            "m2_built": 40,
+            "m2_totals": 40,
+            "active": true,
+            "property_type": 4,
+            "owner": 2,
+            "region": 1,
+            "commune": 1
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 13,
+        "fields": {
+            "name": "Cabaña en el Bosque",
+            "description": "Cabaña acogedora, perfecta para escapadas de fin de semana.",
+            "address": "Sendero del Bosque 15",
+            "m2_built": 90,
+            "m2_totals": 2000,
+            "active": true,
+            "property_type": 5,
+            "owner": 2,
+            "region": 5,
+            "commune": 16
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 14,
+        "fields": {
+            "name": "Duplex Familiar",
+            "description": "Amplio dúplex con balcón y vista al parque.",
+            "address": "Calle Parque 85",
+            "m2_built": 160,
+            "m2_totals": 160,
+            "active": true,
+            "property_type": 3,
+            "owner": 2,
+            "region": 1,
+            "commune": 1
+        }
+    },
+    {
+        "model": "properties.property",
+        "pk": 15,
+        "fields": {
+            "name": "Terreno en la Playa",
+            "description": "Terreno ideal para construir una villa en la playa.",
+            "address": "Playa Bonita 12",
+            "m2_built": 0,
+            "m2_totals": 5000,
+            "active": true,
+            "property_type": 3,
+            "owner": 2,
+            "region": 2,
+            "commune": 6
+        }
+    }
+]

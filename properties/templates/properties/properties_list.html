@@ -1,0 +1,105 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+{% block body %}class="background-image-06"{% endblock %}
+
+{% block main_content %}
+<h1 class="text-center text-white bg-transparency mb-2">Inmuebles</h1>
+<div class="row container-fluid gy-5 justify-content-around my-5">
+    {% if filter == "region" %}
+        <div class="container-fluid bg-transparency text-white">
+            <h2 class="container text-start p-3 my-3">Propiedades por Región</h2>
+        </div>
+        {% for property in propiedades %}
+        <div class="card col-12 col-md-6 col-lg-3 mx-1">
+            <div class="card-header bg-dark text-white">
+                <h3>{{ property.name }}</h3>
+                <h4>{{property.region}}</h4>
+                <a href="{% url 'property-detail' property.id %}"><i class="fa-regular fa-eye p-2 icon"></i></a>
+            </div>
+            <div class="card-body">
+                {{ property.description }}
+            </div>
+            <div class="card-footer text-dark">
+                {% if property.status_price == "venta" %}
+                Precio de venta: ${{ property.sale_price }}
+                {% else %}
+                Precio mensual: ${{ property.monthly_price }}
+                {% endif %}
+            </div>
+        </div>
+        {% empty %}
+        <p class="bg-light p-2 text-center">No hay propiedades en este momento..</p>
+        {% endfor %}
+    {% elif filter == "comuna" %}
+        <div class="container-fluid bg-transparency text-white">
+            <h2 class="container text-start p-3 my-3">Propiedades por Comuna</h2>
+        </div>
+        {% for property in propiedades %}
+        <div class="card col-12 col-md-6 col-lg-3 mx-1">
+            <div class="card-header bg-dark text-white">
+                <h3>{{ property.name }}</h3>
+                <h4>{{ property.commune }}</h4>
+                <a href="{% url 'property-detail' property.id %}"><i class="fa-regular fa-eye p-2 icon"></i></a>
+            </div>
+            <div class="card-body">
+                {{ property.description }}
+            </div>
+            <div class="card-footer">
+                {% if property.status_price == "venta" %}
+                Precio de venta: ${{ property.sale_price }}
+                {% else %}
+                Precio mensual: ${{ property.monthly_price }}
+                {% endif %}
+            </div>
+        </div>
+        {% empty %}
+        <p class="bg-light p-2 text-center">No hay propiedades en este momento..</p>
+        {% endfor %}
+    {% else %}
+        {% for property in propiedades %}
+        <div class="card col-12 col-md-6 col-lg-3 mx-1">
+            <div class="card-header bg-dark text-white">
+                <h3>{{ property.name }}</h3> <a href="{% url 'property-detail' property.id %}"><i class="fa-regular fa-eye p-2 icon"></i></a>
+            </div>
+            <div class="card-body">
+                {{ property.description }}
+            </div>
+            <div class="card-footer">
+                {% if property.price.status_price == "sell" %}
+                Precio de venta: ${{ property.price.sale_price }}
+                {% else %}
+                Precio mensual: ${{ property.price.monthly_price }}
+                {% endif %}
+            </div>
+        </div>
+        {% empty %}
+        <p class="bg-light p-2 text-center">No hay propiedades en este momento..</p>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<!-- Paginación -->
+<div class="container text-center">
+    <nav aria-label="Page navigation example" data-bs-theme="dark">
+        <ul class="pagination d-flex justify-content-center">
+            {% if propiedades.has_previous %}
+                <li class="page-item">
+                    <a class="page-link text-white" href="?page={{ propiedades.previous_page_number }}&filter={{ filter }}">Anterior</a>
+                </li>
+            {% endif %}
+            {% for num in propiedades.paginator.page_range %}
+                <li class="page-item {% if propiedades.number == num %}active{% endif %}">
+                    <a class="page-link text-white" href="?page={{ num }}&filter={{ filter }}">{{ num }}</a>
+                </li>
+            {% endfor %}
+            {% if propiedades.has_next %}
+                <li class="page-item">
+                    <a class="page-link text-white" href="?page={{ propiedades.next_page_number }}&filter={{ filter }}">Siguiente</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+{% endblock %}

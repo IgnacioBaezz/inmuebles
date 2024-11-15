@@ -1,0 +1,314 @@
+[   
+    {
+        "model": "properties.commune",
+        "pk": 1,
+        "fields": {
+            "name": "Santiago",
+            "region": 1
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 2,
+        "fields": {
+            "name": "Las Condes",
+            "region": 1
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 3,
+        "fields": {
+            "name": "Ñuñoa",
+            "region": 1
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 4,
+        "fields": {
+            "name": "Providencia",
+            "region": 1
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 5,
+        "fields": {
+            "name": "Melipilla",
+            "region": 1
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 6,
+        "fields": {
+            "name": "Viña del Mar",
+            "region": 2
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 7,
+        "fields": {
+            "name": "Valparaíso",
+            "region": 2
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 8,
+        "fields": {
+            "name": "Concon",
+            "region": 2
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 9,
+        "fields": {
+            "name": "Villa alemana",
+            "region": 2
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 10,
+        "fields": {
+            "name": "Quintero",
+            "region": 2
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 11,
+        "fields": {
+            "name": "Concepción",
+            "region": 3
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 12,
+        "fields": {
+            "name": "Dichato",
+            "region": 3
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 13,
+        "fields": {
+            "name": "Lota",
+            "region": 3
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 14,
+        "fields": {
+            "name": "Antofagasta",
+            "region": 4
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 15,
+        "fields": {
+            "name": "Tocopilla",
+            "region": 4
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 16,
+        "fields": {
+            "name": "Temuco",
+            "region": 5
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 17,
+        "fields": {
+            "name": "Licanray",
+            "region": 5
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 18,
+        "fields": {
+            "name": "Talca",
+            "region": 6
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 19,
+        "fields": {
+            "name": "Linares",
+            "region": 6
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 20,
+        "fields": {
+            "name": "Puerto Montt",
+            "region": 7
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 21,
+        "fields": {
+            "name": "Osorno",
+            "region": 7
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 22,
+        "fields": {
+            "name": "Rancagua",
+            "region": 8
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 23,
+        "fields": {
+            "name": "Graneros",
+            "region": 8
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 24,
+        "fields": {
+            "name": "La Serena",
+            "region": 9
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 25,
+        "fields": {
+            "name": "Valle del elqui",
+            "region": 9
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 26,
+        "fields": {
+            "name": "Valdivia",
+            "region": 10
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 27,
+        "fields": {
+            "name": "Frutillar",
+            "region": 10
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 28,
+        "fields": {
+            "name": "Coyhaique",
+            "region": 11
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 29,
+        "fields": {
+            "name": "Cochrane",
+            "region": 11
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 30,
+        "fields": {
+            "name": "Punta Arenas",
+            "region": 12
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 31,
+        "fields": {
+            "name": "Porvenir",
+            "region": 12
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 32,
+        "fields": {
+            "name": "Copiapó",
+            "region": 13
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 33,
+        "fields": {
+            "name": "Calama",
+            "region": 13
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 34,
+        "fields": {
+            "name": "Iquique",
+            "region": 14
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 35,
+        "fields": {
+            "name": "Pica",
+            "region": 14
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 36,
+        "fields": {
+            "name": "Chillan",
+            "region": 15
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 37,
+        "fields": {
+            "name": "Portezuelo",
+            "region": 15
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 38,
+        "fields": {
+            "name": "Putre",
+            "region": 16
+        }
+    },
+    {
+        "model": "properties.commune",
+        "pk": 39,
+        "fields": {
+            "name": "Camarones",
+            "region": 16
+        }
+    }
+]

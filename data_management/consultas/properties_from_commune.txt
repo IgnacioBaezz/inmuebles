@@ -1,0 +1,55 @@
+---Commune: Santiago
+Property 1
+ -Name: Proviyork
+ -Description: Estandares altos y comodidad y calidad de vida, tenemos justo lo que buscas
+Property 2
+ -Name: Proyecto Paella
+ -Description: Proyecto de altamar con vista panorámica al océano
+Property 3
+ -Name: Proyecto Bin La Den
+ -Description: Aprovecha las promociones 2x1 imperdible en Septiembre, Solo 11 días
+Property 4
+ -Name: Departamento Urbano
+ -Description: Moderno departamento en el corazón de la ciudad, ideal para profesionales.
+Property 5
+ -Name: Local Comercial
+ -Description: Espacio ideal para tu negocio, en zona de alta afluencia.
+Property 6
+ -Name: Casa Histórica
+ -Description: Casa con encanto histórico, perfecta para eventos o como B&B.
+Property 7
+ -Name: Casa Moderna
+ -Description: Moderna casa de 3 habitaciones con jardín.
+Property 8
+ -Name: Estudio en el Centro
+ -Description: Estudio luminoso y bien ubicado, ideal para una persona.
+Property 9
+ -Name: Duplex Familiar
+ -Description: Amplio dúplex con balcón y vista al parque.
+
+---Commune: Coyhaique
+Property 1
+ -Name: Proyecto fin del mundo
+ -Description: Lugar único para aprovechar estas tierras sagradas en tus últimos días
+
+---Commune: Talca
+Property 1
+ -Name: Casa de Campo
+ -Description: Disfruta de la naturaleza y la tranquilidad en esta hermosa casa de campo.
+
+---Commune: Viña del Mar
+Property 1
+ -Name: Villa Costera
+ -Description: Villa con vista al mar, perfecta para vacaciones familiares.
+Property 2
+ -Name: Terreno en la Playa
+ -Description: Terreno ideal para construir una villa en la playa.
+
+---Commune: Temuco
+Property 1
+ -Name: Terreno en la Montaña
+ -Description: Ideal para construir tu hogar de ensueño, con vistas impresionantes.
+Property 2
+ -Name: Cabaña en el Bosque
+ -Description: Cabaña acogedora, perfecta para escapadas de fin de semana.
+

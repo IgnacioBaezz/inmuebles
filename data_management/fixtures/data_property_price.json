@@ -1,0 +1,137 @@
+[
+    {
+        "model": "properties.propertyprice",
+        "pk": 1,
+        "fields": {
+            "property": 1,
+            "monthly_price": "1200.00",
+            "sale_price": "250000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 2,
+        "fields": {
+            "property": 2,
+            "monthly_price": "1500.00",
+            "sale_price": "300000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 3,
+        "fields": {
+            "property": 3,
+            "monthly_price": "1000.00",
+            "sale_price": "200000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 4,
+        "fields": {
+            "property": 4,
+            "monthly_price": "800.00",
+            "sale_price": "180000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 5,
+        "fields": {
+            "property": 5,
+            "monthly_price": "2000.00",
+            "sale_price": "400000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 6,
+        "fields": {
+            "property": 6,
+            "monthly_price": "900.00",
+            "sale_price": "220000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 7,
+        "fields": {
+            "property": 7,
+            "monthly_price": "1800.00",
+            "sale_price": "370000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 8,
+        "fields": {
+            "property": 8,
+            "monthly_price": "1300.00",
+            "sale_price": "275000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 9,
+        "fields": {
+            "property": 9,
+            "monthly_price": "950.00",
+            "sale_price": "195000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 10,
+        "fields": {
+            "property": 10,
+            "monthly_price": "1700.00",
+            "sale_price": "330000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 11,
+        "fields": {
+            "property": 11,
+            "monthly_price": "1400.00",
+            "sale_price": "260000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 12,
+        "fields": {
+            "property": 12,
+            "monthly_price": "2100.00",
+            "sale_price": "410000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 13,
+        "fields": {
+            "property": 13,
+            "monthly_price": "750.00",
+            "sale_price": "170000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 14,
+        "fields": {
+            "property": 14,
+            "monthly_price": "1550.00",
+            "sale_price": "310000.00"
+        }
+    },
+    {
+        "model": "properties.propertyprice",
+        "pk": 15,
+        "fields": {
+            "property": 15,
+            "monthly_price": "1250.00",
+            "sale_price": "280000.00"
+        }
+    }
+]

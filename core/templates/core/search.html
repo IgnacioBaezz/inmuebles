@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+{% block body %}class="background-image-04{% endblock %}
+
+<h1>Resultados de búsqueda para "{{ query }}"</h1>
+
+{% if results %}
+    <ul>
+        {% for property in results %}
+            <li>{{ property.name }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron propiedades.</p>
+{% endif %}

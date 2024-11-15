@@ -1,0 +1,161 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block body %}class="background-image-06"{% endblock %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block main_content %}
+<div id="property-view" class="container my-5">
+    <h1 class="text-center text-white bg-transparency p-3 my-5">Detalle de Inmueble</h1>
+    <div class="card bg-transparency text-white">
+        <div class="card-header bg-light text-dark">
+            <h3 class="fw-bold fs-1">{{ property.name }}</h3>
+        </div>
+        <div class="card-body p-3">
+            <p><strong>Descripción:</strong> {{ property.description }}</p>
+            {% if property.price.status_price == "sell" %}
+            <p><strong>Precio de venta:</strong> ${{ property.price.sale_price }}</p>
+            {% else %}
+            <p><strong>Precio mensual:</strong> ${{ property.price.monthly_price }}</p>
+            {% endif %}
+            <p><strong>Comuna:</strong> {{ property.commune }}</p>
+            <p><strong>Región:</strong> {{ property.region }}</p>
+            <p><strong></strong></p>
+        </div>
+        <div class="card-footer">
+            <a href="#" id="edit-property-btn" class="btn btn-warning my-2">Editar Propiedad</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="row justify-content-center d-none" id="property-edit-form">
+    <div class="col-md-8 m-5">
+        <div class="card shadow-sm bg-transparency text-white">
+            <div class="card-header text-center">
+                <h1>Editar Propiedad</h1>
+            </div>
+            <div class="card-body">
+                <form method="post" novalidate data-bs-theme="dark">
+                    {% csrf_token %}
+                    <h2>Datos generales</h2>
+                    <hr>
+                    <div class="mb-3">
+                        {{ prop_form.region.label_tag }}
+                        {{ prop_form.region }}
+                        {% if prop_form.region.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.region.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.commune.label_tag }}
+                        {{ prop_form.commune }}
+                        {% if prop_form.commune.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.commune.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.property_type.label_tag }}
+                        {{ prop_form.property_type }}
+                        {% if prop_form.property_type.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.property_type.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.name.label_tag }}
+                        {{ prop_form.name }}
+                        {% if prop_form.name.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.name.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.description.label_tag }}
+                        {{ prop_form.description }}
+                        {% if prop_form.description.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.description.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.address.label_tag }}
+                        {{ prop_form.address }}
+                        {% if prop_form.address.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.address.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.m2_built.label_tag }}
+                        {{ prop_form.m2_built }}
+                        {% if prop_form.m2_built.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.m2_built.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ prop_form.m2_totals.label_tag }}
+                        {{ prop_form.m2_totals }}
+                        {% if prop_form.m2_totals.errors %}
+                        <div class="text-danger">
+                            {{ prop_form.m2_totals.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <h2 class="mt-3 fw-bold">Precios</h2>
+                    <hr>
+                    <div class="mb-3">
+                        {{ price_form.monthly_price.label_tag }}
+                        {{ price_form.monthly_price }}
+                        {% if price_form.monthly_price.errors %}
+                        <div class="text-danger">
+                            {{ price_form.monthly_price.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ price_form.sale_price.label_tag }}
+                        {{ price_form.sale_price }}
+                        {% if price_form.sale_price.errors %}
+                        <div class="text-danger">
+                            {{ price_form.sale_price.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ price_form.status.id_for_label}}">
+                            Que Desea hacer con la propiedad?
+                        </label>
+                        {{ price_form.status_price}}
+                    </div>
+                    <div class="card-footer">
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-house pe-2"></i>Guardar
+                                Propiedad</button>
+                            <a href="#" id="cancel-edit-property-btn"
+                                class="btn btn-danger my-2">Cancelar</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block extra_js %}
+<script>window.comunasPorRegion = {{ comunas_por_region | safe }};</script>
+<script src="{% static 'properties/js/filter.js' %}"></script>
+<script src="{% static 'properties/js/edit_property.js' %}"></script>
+{% endblock %}

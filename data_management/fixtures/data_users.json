@@ -1,0 +1,57 @@
+[
+    {
+        "model":"users.user",
+        "pk": 1,
+        "fields": {
+            "username":"Martin",
+            "first_name":"Lala",
+            "last_name":"Lolula",
+            "email":"lala@gmail.com",
+            "password":"Lala123#3"
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "username": "Pablito",
+            "first_name": "Pablo",
+            "last_name": "Fernández",
+            "email": "pablo.fernandez@example.com",
+            "password": "Lala123#3"
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 3,
+        "fields": {
+            "username": "SofíaRosa",
+            "first_name": "Sofía",
+            "last_name": "Rojas",
+            "email": "sofia.rojas@example.com",
+            "password": "Lala123#3"
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 4,
+        "fields": {
+            "username": "CarlosCool",
+            "first_name": "Carlos",
+            "last_name": "Mendoza",
+            "email": "carlos.mendoza@example.com",
+            "password": "Lala123#3"
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 5,
+        "fields": {
+            "username": "MaríaLuz",
+            "first_name": "María",
+            "last_name": "García",
+            "email": "maria.garcia@example.com",
+            "password": "Lala123#3"
+        }
+    }
+]
