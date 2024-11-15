@@ -23,7 +23,7 @@ def export_properties_from_commune(save_file=False) -> dict:
             for commune_name, properties in properties_from_commune.items():
                 archivo.write(f"---Commune: {commune_name}\n")
                 for idx, prop in enumerate(properties, 1):
-                    archivo.write(f"Property {idx}\n -Name: {prop['name']}\n -Description: {prop["description"]}\n")
+                    archivo.write(f"Property {idx}\n -Name: {prop['name']}\n -Description: {prop['description']}\n")
                 archivo.write("\n")
 
     return properties_from_commune
@@ -52,8 +52,8 @@ def export_properties_from_region(save_file=False) -> dict:
             for region_name, properties in properties_from_region.items():
                 archivo.write(f"---Region: {region_name}\n")
                 for idx, prop in enumerate(properties, 1):
-                    archivo.write(f"Property {idx}\n -Name: {prop['name']}\n -Description: {prop["description"]}\n")
-                    archivo.write(f" -Monthly Price: {prop["monthly_price"]}\n -Sale Price: {prop["sale_price"]}\n")
+                    archivo.write(f"Property {idx}\n -Name: {prop['name']}\n -Description: {prop['description']}\n")
+                    archivo.write(f" -Monthly Price: {prop['monthly_price']}\n -Sale Price: {prop['sale_price']}\n")
                 archivo.write("\n")
 
     return properties_from_region
